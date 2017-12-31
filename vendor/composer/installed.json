@@ -1,0 +1,317 @@
+[
+    {
+        "name": "squizlabs/php_codesniffer",
+        "version": "2.9.1",
+        "version_normalized": "2.9.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+            "reference": "dcbed1074f8244661eecddfc2a675430d8d33f62"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dcbed1074f8244661eecddfc2a675430d8d33f62",
+            "reference": "dcbed1074f8244661eecddfc2a675430d8d33f62",
+            "shasum": ""
+        },
+        "require": {
+            "ext-simplexml": "*",
+            "ext-tokenizer": "*",
+            "ext-xmlwriter": "*",
+            "php": ">=5.1.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2017-05-22T02:43:20+00:00",
+        "bin": [
+            "scripts/phpcs",
+            "scripts/phpcbf"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "CodeSniffer.php",
+                "CodeSniffer/CLI.php",
+                "CodeSniffer/Exception.php",
+                "CodeSniffer/File.php",
+                "CodeSniffer/Fixer.php",
+                "CodeSniffer/Report.php",
+                "CodeSniffer/Reporting.php",
+                "CodeSniffer/Sniff.php",
+                "CodeSniffer/Tokens.php",
+                "CodeSniffer/Reports/",
+                "CodeSniffer/Tokenizers/",
+                "CodeSniffer/DocGenerators/",
+                "CodeSniffer/Standards/AbstractPatternSniff.php",
+                "CodeSniffer/Standards/AbstractScopeSniff.php",
+                "CodeSniffer/Standards/AbstractVariableSniff.php",
+                "CodeSniffer/Standards/IncorrectPatternException.php",
+                "CodeSniffer/Standards/Generic/Sniffs/",
+                "CodeSniffer/Standards/MySource/Sniffs/",
+                "CodeSniffer/Standards/PEAR/Sniffs/",
+                "CodeSniffer/Standards/PSR1/Sniffs/",
+                "CodeSniffer/Standards/PSR2/Sniffs/",
+                "CodeSniffer/Standards/Squiz/Sniffs/",
+                "CodeSniffer/Standards/Zend/Sniffs/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Greg Sherwood",
+                "role": "lead"
+            }
+        ],
+        "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+        "homepage": "http://www.squizlabs.com/php-codesniffer",
+        "keywords": [
+            "phpcs",
+            "standards"
+        ]
+    },
+    {
+        "name": "wp-coding-standards/wpcs",
+        "version": "0.10.0",
+        "version_normalized": "0.10.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
+            "reference": "b39490465f6fd7375743a395019cd597e12119c9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/b39490465f6fd7375743a395019cd597e12119c9",
+            "reference": "b39490465f6fd7375743a395019cd597e12119c9",
+            "shasum": ""
+        },
+        "require": {
+            "squizlabs/php_codesniffer": "^2.6"
+        },
+        "time": "2016-08-29T20:04:47+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/graphs/contributors"
+            }
+        ],
+        "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
+        "keywords": [
+            "phpcs",
+            "standards",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "stevegrunwell/wp-enforcer",
+        "version": "v0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stevegrunwell/wp-enforcer.git",
+            "reference": "d975e353d768005746d9104ba2846040e0f31061"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stevegrunwell/wp-enforcer/zipball/d975e353d768005746d9104ba2846040e0f31061",
+            "reference": "d975e353d768005746d9104ba2846040e0f31061",
+            "shasum": ""
+        },
+        "require": {
+            "wp-coding-standards/wpcs": "^0.10.0"
+        },
+        "time": "2017-01-04T15:51:27+00:00",
+        "bin": [
+            "bin/wp-enforcer"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Steve Grunwell",
+                "email": "steve@stevegrunwell.com",
+                "homepage": "https://stevegrunwell.com"
+            }
+        ],
+        "description": "Git hooks to encourage well-written WordPress.",
+        "keywords": [
+            "PHP_CodeSniffer",
+            "coding standards",
+            "git hooks",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "wp-api-libraries/wp-idxbroker-api",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/wp-api-libraries/wp-idxbroker-api.git",
+            "reference": "9c38becfb6de68c0814b8972a7a7a509e573213f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/wp-api-libraries/wp-idxbroker-api/zipball/9c38becfb6de68c0814b8972a7a7a509e573213f",
+            "reference": "9c38becfb6de68c0814b8972a7a7a509e573213f",
+            "shasum": ""
+        },
+        "require": {
+            "stevegrunwell/wp-enforcer": "^0.4.1"
+        },
+        "require-dev": {
+            "phpdocumentor/phpdocumentor": "2.*"
+        },
+        "time": "2017-07-29T08:45:12+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "support": {
+            "source": "https://github.com/wp-api-libraries/wp-idxbroker-api/tree/1.1.0",
+            "issues": "https://github.com/wp-api-libraries/wp-idxbroker-api/issues"
+        }
+    },
+    {
+        "name": "htmlburger/carbon-fields",
+        "version": "2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/htmlburger/carbon-fields.git",
+            "reference": "bcfb81e12d0e3162609e938efbdd4ae01bd4abde"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/bcfb81e12d0e3162609e938efbdd4ae01bd4abde",
+            "reference": "bcfb81e12d0e3162609e938efbdd4ae01bd4abde",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9.7",
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2017-11-16T15:36:25+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Carbon_Fields\\": "core/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0"
+        ],
+        "authors": [
+            {
+                "name": "htmlBurger",
+                "email": "wordpress@htmlburger.com",
+                "homepage": "https://htmlburger.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Marin Atanasov",
+                "email": "contact@marinatanasov.com",
+                "homepage": "http://marinatanasov.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Siyan Panayotov",
+                "homepage": "http://siyanpanayotov.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Georgi Stoyanov",
+                "email": "stoyanov.gs@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Stanimir Panchev",
+                "email": "Stan4omir@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Peter Petrov",
+                "email": "peter.petrov89@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Plamen Kostadinov",
+                "email": "pkostadinov.2create@gmail.com",
+                "homepage": "http://plasmen.info/",
+                "role": "Developer"
+            },
+            {
+                "name": "Stanimir Stoyanov",
+                "email": "stanimir.k.stoyanov@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Georgi Popov",
+                "homepage": "http://magadanski.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "German Velchev",
+                "email": "germozy@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Rashko Petrov",
+                "email": "brutalenemy666@gmail.com",
+                "homepage": "http://errorfactory.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Miroslav Mitev",
+                "email": "mmitev.2create@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Kaloyan Ivanov",
+                "email": "kaloyanxivanov@gmail.com",
+                "homepage": "http://vilepixels.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Atanas Angelov",
+                "email": "atanas.angelov.dev@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Alexander Panayotov",
+                "email": "alexander.panayotov@gmail.com",
+                "homepage": "http://alexanderpanayotov.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Viktor Vasilev",
+                "email": "liberalcho@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
+        "homepage": "http://carbonfields.net/"
+    }
+]

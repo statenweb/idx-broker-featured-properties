@@ -1,0 +1,84 @@
+---
+engines:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  fixme:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "WordPress-Core,WordPress-Docs,WordPress-Extra"
+  phpmd:
+    enabled: true
+    checks:
+      Design/LongClass:
+        enabled: false
+      ExcessivePublicCount:
+        enabled: false
+      Naming/ShortVariable:
+        enabled: false
+      Design/TooManyMethods:
+        enabled: false
+      Design/TooManyPublicMethods:
+        enabled: false
+      Design/WeightedMethodCount:
+        enabled: false
+      Controversial/CamelCaseParameterName:
+        enabled: false
+      Controversial/CamelCaseMethodName:
+        enabled: false
+      Controversial/CamelCasePropertyName:
+        enabled: false
+      Controversial/CamelCaseVariableName:
+        enabled: false
+      CleanCode/ElseExpression:
+        enabled: false
+  eslint:
+    enabled: true
+    channel: "eslint-2"
+  scss-lint:
+    enabled: true
+  markdownlint:
+    enabled: true
+ratings:
+  paths:
+  - "**.scss"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.md"
+  - "**.py"
+  - "**.rb"
+exclude_paths:
+  - "LICENSE"
+  - "tests/"
+  - "docs/"
+  - "**.md"
+  - "**.png"
+  - "**.xml"
+  - "**.jpg"
+  - "**.gif"
+  - "**.css"
+  - "**.map"
+  - "gulpfile.js"
+  - "config.codekit"
+  - "composer.lock"
+  - "phpcs.xml"
+  - "**.json"
+  - "**.pot"
+  - "**.txt"
+  - "**-min.js"
+  - "**-min.css"
+  - "**.dist"
+  - "**.sh"
+  - "**.gif"
+  - "**.jpg"
+  - "**.jpeg"

@@ -1,0 +1,36 @@
+#ibfp-sortable > p {
+    margin: 0 0 10px 0;
+    padding: 15px;
+    font-size: 1em;
+    line-height: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 300px;
+    border: 1px solid #e5e5e5;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .04) hoff voff blur color;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .04) hoff voff blur color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04) hoff voff blur color;
+    cursor: move;
+    background: #fafafa;
+
+}
+
+#ibfp-sortable > p:hover {
+    border-color:#999;
+}
+
+#ibfp-sortable .sortable-indicator {
+    float: right;
+    line-height: 40px;
+    height: 10px;
+    width: 10px;
+
+}
+
+
+
