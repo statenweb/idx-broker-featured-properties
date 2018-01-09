@@ -80,21 +80,38 @@ class Global_Settings {
 	}
 
 	public function featured_properties_render() {
+		$api_key = Global_Settings::get_api_key();
+		if ( ! $api_key ) :
+			?>Please enter your API key<?php
+			return;
+		endif;
 		$properties            = Request::get_properties();
 		$selected_properties   = get_option( self::FEATURED_PROPERTIES_OPTION );
 		$property_keys         = array_keys( $properties );
-		$unselected_properties = array_diff( $property_keys, $selected_properties );
+		$unselected_properties = array_diff( (array)$property_keys, (array)$selected_properties );
+		$properties_to_display = false;
 		?>
 		<div id="ibfp-sortable"><?php
 
-		foreach ( $selected_properties as $property ) :
-			self::generate_checkbox( $property, $properties[ $property ], true );
-		endforeach;
+		if ( $selected_properties ) :
+			$properties_to_display = true;
+			foreach ( $selected_properties as $property ) :
+				self::generate_checkbox( $property, $properties[ $property ], true );
+			endforeach;
+		endif;
 
 
-		foreach ( $unselected_properties as $property ):
-			self::generate_checkbox( $property, $properties[ $property ] );
-		endforeach;
+		if ( $unselected_properties ):
+			$properties_to_display = true;
+			foreach ( $unselected_properties as $property ):
+				self::generate_checkbox( $property, $properties[ $property ] );
+			endforeach;
+		endif;
+
+		if ( ! $properties_to_display ) :
+			?>No Properties To Display, please check your API key at <?php
+		endif;
+
 		?></div><?php
 	}
 
