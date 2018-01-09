@@ -68,9 +68,20 @@ class Global_Settings {
 			'ibfp_plugin_page_section'
 		);
 
-		register_setting( 'ibfp_plugin_page', 'ibfp_api_key' );
+
 		register_setting( 'ibfp_plugin_page', self::FEATURED_PROPERTIES_OPTION, array(
 			'sanitize_callback' => function ( $value ) {
+
+				return $value;
+			}
+		) );
+
+		register_setting( 'ibfp_plugin_page', 'ibfp_api_key', array(
+			'sanitize_callback' => function ( $value ) {
+				if ( $value !== self::get_api_key() ) {
+					delete_transient( Request::TRANSIENT_KEY );
+					delete_option( self::FEATURED_PROPERTIES_OPTION );
+				}
 
 				return $value;
 			}
@@ -88,7 +99,7 @@ class Global_Settings {
 		$properties            = Request::get_properties();
 		$selected_properties   = get_option( self::FEATURED_PROPERTIES_OPTION );
 		$property_keys         = array_keys( $properties );
-		$unselected_properties = array_diff( (array)$property_keys, (array)$selected_properties );
+		$unselected_properties = array_diff( (array) $property_keys, (array) $selected_properties );
 		$properties_to_display = false;
 		?>
 		<div id="ibfp-sortable"><?php
@@ -109,7 +120,7 @@ class Global_Settings {
 		endif;
 
 		if ( ! $properties_to_display ) :
-			?>No Properties To Display, please check your API key at <?php
+			?>No Properties To Display, please check your API key at <a href="http://middleware.idxbroker.com/mgmt/apikey.php" target="_blank">middleware.idxbroker.com/mgmt/apikey.php</a><?php
 		endif;
 
 		?></div><?php
