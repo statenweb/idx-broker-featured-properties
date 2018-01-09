@@ -4,7 +4,7 @@ Donate link: https://statenweb.com/donate
 Tags: IDX Broker
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.2
+Stable tag: 0.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,11 @@ Please note that this plugin makes use of a 3rd party service to retrieve IDX Br
 
 #### Release Notes
 
+
+- 0.0.3
+Fix for notification if bad API key is entered, fix for situation where API key changes
+Clean up the API request, remove unnecessary old code, up cache length to 10 minutes
+Fix some issues with outputting if IDX API does not have specific types of properties
 
 - 0.0.2
 add in readme
