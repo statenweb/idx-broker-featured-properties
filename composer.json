@@ -1,7 +1,8 @@
 {
     "name": "statenweb/idx-broker-featured-properties",
     "type": "wordpress-plugin",
-    "license": "GPLv3",
+    "description" : "Allows you to curate IDX Broker properties",
+    "license": "GPL-3.0-or-later",
     "repositories": [
         {
             "type": "vcs",
