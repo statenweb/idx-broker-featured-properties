@@ -4,22 +4,8 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb24d1387069851224581a87e2e7bb53a
+class ComposerStaticInite9ac37eb460a7ad7899df47f989fc81f
 {
-    public static $prefixLengthsPsr4 = array (
-        'C' => 
-        array (
-            'Carbon_Fields\\' => 14,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'Carbon_Fields\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',
-        ),
-    );
-
     public static $classMap = array (
         'Generic_Sniffs_Arrays_DisallowLongArraySyntaxSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Arrays/DisallowLongArraySyntaxSniff.php',
         'Generic_Sniffs_Arrays_DisallowShortArraySyntaxSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Arrays/DisallowShortArraySyntaxSniff.php',
@@ -278,9 +264,7 @@ class ComposerStaticInitb24d1387069851224581a87e2e7bb53a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb24d1387069851224581a87e2e7bb53a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb24d1387069851224581a87e2e7bb53a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitb24d1387069851224581a87e2e7bb53a::$classMap;
+            $loader->classMap = ComposerStaticInite9ac37eb460a7ad7899df47f989fc81f::$classMap;
 
         }, null, ClassLoader::class);
     }

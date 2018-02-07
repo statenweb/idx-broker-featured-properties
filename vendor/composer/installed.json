@@ -80,44 +80,6 @@
         ]
     },
     {
-        "name": "wp-coding-standards/wpcs",
-        "version": "0.10.0",
-        "version_normalized": "0.10.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
-            "reference": "b39490465f6fd7375743a395019cd597e12119c9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/b39490465f6fd7375743a395019cd597e12119c9",
-            "reference": "b39490465f6fd7375743a395019cd597e12119c9",
-            "shasum": ""
-        },
-        "require": {
-            "squizlabs/php_codesniffer": "^2.6"
-        },
-        "time": "2016-08-29T20:04:47+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Contributors",
-                "homepage": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/graphs/contributors"
-            }
-        ],
-        "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
-        "keywords": [
-            "phpcs",
-            "standards",
-            "wordpress"
-        ]
-    },
-    {
         "name": "stevegrunwell/wp-enforcer",
         "version": "v0.4.2",
         "version_normalized": "0.4.2.0",
@@ -190,128 +152,41 @@
         }
     },
     {
-        "name": "htmlburger/carbon-fields",
-        "version": "2.1.1",
-        "version_normalized": "2.1.1.0",
+        "name": "wp-coding-standards/wpcs",
+        "version": "0.10.0",
+        "version_normalized": "0.10.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/htmlburger/carbon-fields.git",
-            "reference": "bcfb81e12d0e3162609e938efbdd4ae01bd4abde"
+            "url": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git",
+            "reference": "b39490465f6fd7375743a395019cd597e12119c9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/bcfb81e12d0e3162609e938efbdd4ae01bd4abde",
-            "reference": "bcfb81e12d0e3162609e938efbdd4ae01bd4abde",
+            "url": "https://api.github.com/repos/WordPress-Coding-Standards/WordPress-Coding-Standards/zipball/b39490465f6fd7375743a395019cd597e12119c9",
+            "reference": "b39490465f6fd7375743a395019cd597e12119c9",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3"
+            "squizlabs/php_codesniffer": "^2.6"
         },
-        "require-dev": {
-            "mockery/mockery": "^0.9.7",
-            "phpunit/phpunit": "~4.8"
-        },
-        "time": "2017-11-16T15:36:25+00:00",
+        "time": "2016-08-29T20:04:47+00:00",
         "type": "library",
         "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Carbon_Fields\\": "core/"
-            }
-        },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "GPL-2.0"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "htmlBurger",
-                "email": "wordpress@htmlburger.com",
-                "homepage": "https://htmlburger.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "Marin Atanasov",
-                "email": "contact@marinatanasov.com",
-                "homepage": "http://marinatanasov.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "Siyan Panayotov",
-                "homepage": "http://siyanpanayotov.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "Georgi Stoyanov",
-                "email": "stoyanov.gs@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Stanimir Panchev",
-                "email": "Stan4omir@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Peter Petrov",
-                "email": "peter.petrov89@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Plamen Kostadinov",
-                "email": "pkostadinov.2create@gmail.com",
-                "homepage": "http://plasmen.info/",
-                "role": "Developer"
-            },
-            {
-                "name": "Stanimir Stoyanov",
-                "email": "stanimir.k.stoyanov@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Georgi Popov",
-                "homepage": "http://magadanski.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "German Velchev",
-                "email": "germozy@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Rashko Petrov",
-                "email": "brutalenemy666@gmail.com",
-                "homepage": "http://errorfactory.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "Miroslav Mitev",
-                "email": "mmitev.2create@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Kaloyan Ivanov",
-                "email": "kaloyanxivanov@gmail.com",
-                "homepage": "http://vilepixels.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "Atanas Angelov",
-                "email": "atanas.angelov.dev@gmail.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Alexander Panayotov",
-                "email": "alexander.panayotov@gmail.com",
-                "homepage": "http://alexanderpanayotov.com/",
-                "role": "Developer"
-            },
-            {
-                "name": "Viktor Vasilev",
-                "email": "liberalcho@gmail.com",
-                "role": "Developer"
+                "name": "Contributors",
+                "homepage": "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/graphs/contributors"
             }
         ],
-        "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
-        "homepage": "http://carbonfields.net/"
+        "description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
+        "keywords": [
+            "phpcs",
+            "standards",
+            "wordpress"
+        ]
     }
 ]

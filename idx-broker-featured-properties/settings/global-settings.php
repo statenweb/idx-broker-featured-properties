@@ -7,8 +7,8 @@ use IDX_Broker_Featured_Properties\Properties\Request;
 
 class Global_Settings {
 
-	const MENU_SLUG = 'idx_broker_featured_properties';
-	const FEATURED_PROPERTIES_OPTION = 'ibfp_featured_properties';
+	private static $menu_slug = 'idx_broker_featured_properties';
+	public static $featured_properties_option = 'ibfp_featured_properties';
 
 	public function init() {
 		$this->attach_hooks();
@@ -22,7 +22,7 @@ class Global_Settings {
 
 	public function enqueue( $slug ) {
 
-		if ( $slug === 'settings_page_' . self::MENU_SLUG ) {
+		if ( $slug === 'settings_page_' . self::$menu_slug ) {
 			wp_enqueue_script( 'ibfp-admin', dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/js/admin.js',
 				[ 'jquery-ui-sortable' ] );
 
@@ -37,7 +37,7 @@ class Global_Settings {
 
 		add_submenu_page( 'options-general.php', 'IDX Broker Featured Properties', 'IDX Broker Featured Properties',
 			'manage_options',
-			self::MENU_SLUG, array( $this, 'options_page' ) );
+			self::$menu_slug, array( $this, 'options_page' ) );
 
 	}
 
@@ -61,7 +61,7 @@ class Global_Settings {
 		);
 
 		add_settings_field(
-			self::FEATURED_PROPERTIES_OPTION,
+			self::$featured_properties_option,
 			__( 'IDX Broker Properties', 'ibfp' ),
 			array( $this, 'featured_properties_render' ),
 			'ibfp_plugin_page',
@@ -69,7 +69,7 @@ class Global_Settings {
 		);
 
 
-		register_setting( 'ibfp_plugin_page', self::FEATURED_PROPERTIES_OPTION, array(
+		register_setting( 'ibfp_plugin_page', self::$featured_properties_option, array(
 			'sanitize_callback' => function ( $value ) {
 
 				return $value;
@@ -80,7 +80,7 @@ class Global_Settings {
 			'sanitize_callback' => function ( $value ) {
 				if ( $value !== self::get_api_key() ) {
 					delete_transient( Request::TRANSIENT_KEY );
-					delete_option( self::FEATURED_PROPERTIES_OPTION );
+					delete_option( self::$featured_properties_option );
 				}
 
 				return $value;
@@ -97,7 +97,7 @@ class Global_Settings {
 			return;
 		endif;
 		$properties            = Request::get_properties();
-		$selected_properties   = get_option( self::FEATURED_PROPERTIES_OPTION );
+		$selected_properties   = get_option( self::$featured_properties_option );
 		$property_keys         = array_keys( $properties );
 		$unselected_properties = array_diff( (array) $property_keys, (array) $selected_properties );
 		$properties_to_display = false;
@@ -128,7 +128,7 @@ class Global_Settings {
 
 	public static function generate_checkbox( $property_id, $property, $checked = false ) {
 		?>
-		<p><input type="checkbox" name="<?php esc_attr_e( self::FEATURED_PROPERTIES_OPTION ) ?>[]"
+		<p><input type="checkbox" name="<?php esc_attr_e( self::$featured_properties_option ) ?>[]"
 				  value="<?php esc_attr_e( $property_id ); ?>"
 			<?php checked( $checked, true ); ?>><?php esc_html_e( $property['address'] ); ?>
 		<img class="sortable-indicator"

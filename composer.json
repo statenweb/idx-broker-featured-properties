@@ -15,7 +15,6 @@
         }
     ],
     "require-dev": {
-        "wp-api-libraries/wp-idxbroker-api": "^1.1",
-        "htmlburger/carbon-fields": "^2.1"
+        "wp-api-libraries/wp-idxbroker-api": "^1.1"
     }
 }

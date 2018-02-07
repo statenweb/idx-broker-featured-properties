@@ -4,7 +4,7 @@ Donate link: https://statenweb.com/donate
 Tags: IDX Broker
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.3
+Stable tag: 0.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,15 +20,49 @@ Please note that this plugin makes use of a 3rd party service to retrieve IDX Br
 
 ## Simple usage:
 
-### Curating your featured properties
+### Getting started (required for all use cases):
 
 - Download, install and activate the plugin.
 - After installing Go to `Settings` > `IDX Broker Featured Properties` and add your API Key.
+
+
+### Curating your featured properties globally
+
+- Follow steps in Getting started above
 - You can now see all of your properties (including supplemental) -- you can select which properties you want as featured (by checking them) and reorder them. Use the API to retrieve the property objects.
 - Use the API call `ibfp_get_featured_properties()` to retrieve a listing of property objects. Use them as you see fit!
 
+### Curating your featured properties by post
+- Follow steps in Getting started above
+- You now can programmatically, via a filter, enable the meta box to appear on post edit screens, either by post type as a whole or programmatically based on context, see two examples:
+
+```
+add_filter( 'ibfp/post-types/display-meta-box', function ( $post_types ) {
+	$post_types   = (array) $post_types;
+	$post_types[] = 'post';
+
+	return $post_types;
+} );
+```
+
+```
+add_filter( 'ibfp/post-types/displayd-meta-box-override', function ( $display_boolean, $post_object ) {
+
+	if ( has_category( 'news', $post_object->ID ) ) {
+		$display_boolean = true;
+	}
+
+	return $display_boolean;
+}, 10, 2 );
+```
+
+- Use the API call `ibfp_get_featured_properties( $post_id )` to retrieve a listing of property objects for a particular post id. Use them as you see fit!
+
+
 #### Release Notes
 
+- 0.0.4
+Added the ability to curate on single posts
 
 - 0.0.3
 Fix for notification if bad API key is entered, fix for situation where API key changes

@@ -14,6 +14,7 @@
 use IDX_Broker_Featured_Properties\Notice\Notice;
 use IDX_Broker_Featured_Properties\Properties\Featured;
 use IDX_Broker_Featured_Properties\Settings\Global_Settings;
+use IDX_Broker_Featured_Properties\Settings\Posts;
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/vendor/wp-api-libraries/wp-idxbroker-api/wp-idxbroker-api.php';
@@ -40,6 +41,9 @@ $global_settings->init();
 
 $notice = new Notice();
 $notice->init();
+
+$posts = new Posts();
+$posts->init();
 
 function ibfp_get_featured_properties(){
 	return Featured::get();
