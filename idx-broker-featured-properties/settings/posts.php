@@ -3,6 +3,7 @@
 namespace IDX_Broker_Featured_Properties\Settings;
 
 
+use IDX_Broker_Featured_Properties\Properties\Featured;
 use IDX_Broker_Featured_Properties\Properties\Request;
 
 class Posts {
@@ -53,7 +54,7 @@ class Posts {
 
 
 	public function enqueue( $slug ) {
-		global $post;
+
 		if (
 		in_array( $slug, array( 'post.php', 'post-new.php' ) )
 		) {
@@ -69,25 +70,26 @@ class Posts {
 
 	public function featured_properties_render() {
 
-		$properties            = Request::get_properties();
-		$selected_properties   = get_post_meta( get_the_ID(), self::$featured_properties_meta_key, true );
-		$property_keys         = array_keys( $properties );
-		$unselected_properties = array_diff( (array) $property_keys, (array) $selected_properties );
-		$properties_to_display = false;
+		$properties               = Request::get_properties();
+		$selected_properties      = Featured::get( get_the_ID() );
+		$property_keys            = array_keys( $properties );
+		$selected_properties_keys = array_keys( $selected_properties );
+		$unselected_properties_keys    = array_diff( (array) $property_keys, (array) $selected_properties_keys );
+		$properties_to_display    = false;
 		?>
 		<div id="ibfp-sortable"><?php
 
-		if ( $selected_properties ) :
+		if ( $selected_properties_keys ) :
 			$properties_to_display = true;
-			foreach ( $selected_properties as $property ) :
+			foreach ( $selected_properties_keys as $property ) :
 				self::generate_checkbox( $property, $properties[ $property ], true );
 			endforeach;
 		endif;
 
 
-		if ( $unselected_properties ):
+		if ( $unselected_properties_keys ):
 			$properties_to_display = true;
-			foreach ( $unselected_properties as $property ):
+			foreach ( $unselected_properties_keys as $property ):
 				self::generate_checkbox( $property, $properties[ $property ] );
 			endforeach;
 		endif;

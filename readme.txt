@@ -4,7 +4,7 @@ Donate link: https://statenweb.com/donate
 Tags: IDX Broker
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 0.0.5
+Stable tag: 0.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,10 @@ add_filter( 'ibfp/post-types/displayd-meta-box-override', function ( $display_bo
 
 
 #### Release Notes
+
+- 0.0.6
+Handle properties a bit cleaner (always use \IDX_Broker_Featured_Properties\Properties\Featured::get())
+Cleanly handle if a property is delisted from IDX Broker
 
 - 0.0.5
 Fix composer validation

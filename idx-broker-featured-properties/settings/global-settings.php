@@ -3,6 +3,7 @@
 namespace IDX_Broker_Featured_Properties\Settings;
 
 
+use IDX_Broker_Featured_Properties\Properties\Featured;
 use IDX_Broker_Featured_Properties\Properties\Request;
 
 class Global_Settings {
@@ -96,17 +97,18 @@ class Global_Settings {
 			?>Please enter your API key<?php
 			return;
 		endif;
-		$properties            = Request::get_properties();
-		$selected_properties   = get_option( self::$featured_properties_option );
-		$property_keys         = array_keys( $properties );
-		$unselected_properties = array_diff( (array) $property_keys, (array) $selected_properties );
+		$properties               = Request::get_properties();
+		$selected_properties      = Featured::get();
+		$selected_properties_keys = array_keys( $selected_properties );
+		$property_keys            = array_keys( $properties );
+		$unselected_properties = array_diff( (array) $property_keys, (array) $selected_properties_keys );
 		$properties_to_display = false;
 		?>
 		<div id="ibfp-sortable"><?php
 
-		if ( $selected_properties ) :
+		if ( $selected_properties_keys ) :
 			$properties_to_display = true;
-			foreach ( $selected_properties as $property ) :
+			foreach ( $selected_properties_keys as $property ) :
 				self::generate_checkbox( $property, $properties[ $property ], true );
 			endforeach;
 		endif;
@@ -120,7 +122,8 @@ class Global_Settings {
 		endif;
 
 		if ( ! $properties_to_display ) :
-			?>No Properties To Display, please check your API key at <a href="http://middleware.idxbroker.com/mgmt/apikey.php" target="_blank">middleware.idxbroker.com/mgmt/apikey.php</a><?php
+			?>No Properties To Display, please check your API key at <a
+				href="http://middleware.idxbroker.com/mgmt/apikey.php" target="_blank">middleware.idxbroker.com/mgmt/apikey.php</a><?php
 		endif;
 
 		?></div><?php

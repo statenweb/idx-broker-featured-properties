@@ -23,7 +23,9 @@ class Featured {
 
 		foreach ( $featured_properties as $featured_property ) {
 
-			$properties_array[ $featured_property ] = $all_properties[ $featured_property ];
+			if ( isset( $all_properties[ $featured_property ] ) ) {
+				$properties_array[ $featured_property ] = $all_properties[ $featured_property ];
+			}
 		}
 
 		return $properties_array;
