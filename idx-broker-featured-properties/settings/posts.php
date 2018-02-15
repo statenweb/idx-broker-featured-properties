@@ -70,12 +70,12 @@ class Posts {
 
 	public function featured_properties_render() {
 
-		$properties               = Request::get_properties();
-		$selected_properties      = Featured::get( get_the_ID() );
-		$property_keys            = array_keys( $properties );
-		$selected_properties_keys = array_keys( $selected_properties );
-		$unselected_properties_keys    = array_diff( (array) $property_keys, (array) $selected_properties_keys );
-		$properties_to_display    = false;
+		$properties                 = Request::get_properties();
+		$selected_properties        = Featured::get( get_the_ID() );
+		$property_keys              = array_keys( $properties );
+		$selected_properties_keys   = array_keys( $selected_properties );
+		$unselected_properties_keys = array_diff( (array) $property_keys, (array) $selected_properties_keys );
+		$properties_to_display      = false;
 		?>
 		<div id="ibfp-sortable"><?php
 
@@ -144,10 +144,6 @@ class Posts {
 			return;
 		}
 
-		if ( ! array_key_exists( self::$featured_properties_meta_key, $_POST ) ) {
-			return;
-		}
-
 		if ( ! array_key_exists( self::$nonce_key, $_POST ) ) {
 			return;
 		}
@@ -157,7 +153,7 @@ class Posts {
 			die( __( 'Security check', 'ibfp' ) );
 		}
 
-		$value = $_POST[ self::$featured_properties_meta_key ];
+		$value = isset( $_POST[ self::$featured_properties_meta_key ] ) ? $_POST[ self::$featured_properties_meta_key ] : null;
 		update_post_meta( $post_id, self::$featured_properties_meta_key, $value );
 
 	}
