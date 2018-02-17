@@ -5,7 +5,7 @@
 * Plugin URI: https://github.com/statenweb/idx-broker-featured-properties
 * Description: API for curating featured properties from IDX Broker
 * Author: StatenWeb, Mat Gargano
-* Version: 1.0.1
+* Version: 1.0.2
 * Text Domain: idx-broker-featured-properties
 * Author URI: https://statenweb.com
 */
@@ -57,9 +57,9 @@ function ibfp_get_featured_properties( $pass_through = false ) {
 add_action( 'admin_enqueue_scripts', 'ibfp_admin_enqueues' );
 
 function ibfp_admin_enqueues() {
-	wp_enqueue_script( 'ibfp-admin', dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/js/admin.js',
+	wp_enqueue_script( 'ibfp-admin',  plugin_dir_url( __FILE__ ) . '/js/admin.js',
 		[ 'jquery-ui-sortable' ] );
 
 	wp_enqueue_style( 'ibfp-admin',
-		dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/css/admin.css' );
+		plugin_dir_url( __FILE__ ) . '/css/admin.css' );
 }

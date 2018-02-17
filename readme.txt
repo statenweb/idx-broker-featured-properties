@@ -61,6 +61,9 @@ add_filter( 'ibfp/post-types/displayd-meta-box-override', function ( $display_bo
 
 #### Release Notes
 
+- 1.0.2
+Fix for enqueue issue
+
 - 1.0.1
 Enqueue everywhere on admin so that overriding filters work
 Fix bug with css
