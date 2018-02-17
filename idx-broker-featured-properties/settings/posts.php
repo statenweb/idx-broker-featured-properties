@@ -71,7 +71,7 @@ class Posts {
 	public function featured_properties_render() {
 
 		$properties                 = Request::get_properties();
-		$selected_properties        = Featured::get( get_the_ID() );
+		$selected_properties        = Featured::get( [ 'post_id' => get_the_ID() ] );
 		$property_keys              = array_keys( $properties );
 		$selected_properties_keys   = array_keys( $selected_properties );
 		$unselected_properties_keys = array_diff( (array) $property_keys, (array) $selected_properties_keys );

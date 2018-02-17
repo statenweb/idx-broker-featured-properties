@@ -1,3 +1,9 @@
+.widget-inside .ibfp-sortable {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ibfp-sortable > p,
 #ibfp-sortable > p {
     margin: 0 0 10px 0;
     padding: 15px;
@@ -20,10 +26,12 @@
 
 }
 
+.ibfp-sortable > p:hover,
 #ibfp-sortable > p:hover {
-    border-color:#999;
+    border-color: #999;
 }
 
+.ibfp-sortable .sortable-indicator
 #ibfp-sortable .sortable-indicator {
     float: right;
     line-height: 40px;

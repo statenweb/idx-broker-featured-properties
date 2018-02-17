@@ -1,0 +1,1 @@
+This should be overridden see the documentation and the filter `ibfp_widget_template` for more info

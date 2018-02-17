@@ -3,8 +3,8 @@ Contributors: matstars, statenweb
 Donate link: https://statenweb.com/donate
 Tags: IDX Broker
 Requires at least: 4.0
-Tested up to: 4.9.1
-Stable tag: 0.0.9
+Tested up to: 4.9.4
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,10 +56,13 @@ add_filter( 'ibfp/post-types/displayd-meta-box-override', function ( $display_bo
 }, 10, 2 );
 ```
 
-- Use the API call `ibfp_get_featured_properties( $post_id )` to retrieve a listing of property objects for a particular post id. Use them as you see fit!
+- Use the API call `ibfp_get_featured_properties( [ 'post_id' => '$post_id ] )` to retrieve a listing of property objects for a particular post id. Use them as you see fit!
 
 
 #### Release Notes
+
+- 1.0.0
+Add in a widget, change the way that ibfp_get_featured_properties() works, breaking changes ahoy!
 
 - 0.0.9
 Fix for bug when a single post is saved without any properties

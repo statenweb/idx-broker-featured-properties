@@ -5,7 +5,7 @@
 * Plugin URI: https://github.com/statenweb/idx-broker-featured-properties
 * Description: API for curating featured properties from IDX Broker
 * Author: StatenWeb, Mat Gargano
-* Version: 0.0.9
+* Version: 0.0.8
 * Text Domain: idx-broker-featured-properties
 * Author URI: https://statenweb.com
 */
@@ -15,6 +15,7 @@ use IDX_Broker_Featured_Properties\Notice\Notice;
 use IDX_Broker_Featured_Properties\Properties\Featured;
 use IDX_Broker_Featured_Properties\Settings\Global_Settings;
 use IDX_Broker_Featured_Properties\Settings\Posts;
+use IDX_Broker_Featured_Properties\Widget\Featured_Properties;
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/vendor/wp-api-libraries/wp-idxbroker-api/wp-idxbroker-api.php';
@@ -45,6 +46,9 @@ $notice->init();
 $posts = new Posts();
 $posts->init();
 
-function ibfp_get_featured_properties( $post_id = false ){
-	return Featured::get( $post_id );
+$widget = new Featured_Properties();
+$widget->init();
+
+function ibfp_get_featured_properties( $pass_through = false ) {
+	return Featured::get( $pass_through );
 }

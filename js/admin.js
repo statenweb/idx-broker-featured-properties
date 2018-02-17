@@ -1,6 +1,28 @@
+var ibfpRetriggerSortable;
 jQuery(document).ready(function($) {
-  var $ibfpSortable = $('#ibfp-sortable');
-  $ibfpSortable.sortable();
-  $ibfpSortable.disableSelection();
+  ibfpRetriggerSortable = function() {
+    var $ibfpSortable = $('#ibfp-sortable, .ibfp-sortable');
+    $ibfpSortable.each(function() {
+
+      $(this).sortable({
+        stop: function() {
+          $(this).parents('form').trigger('change');
+        },
+      });
+      $(this).disableSelection();
+
+    });
+  };
+
+  $(document).on('widget-added', function(event, widget) {
+    ibfpRetriggerSortable();
+  });
+
+  $(document).on('widget-updated', function(event, widget) {
+    ibfpRetriggerSortable();
+  });
+
+  ibfpRetriggerSortable();
 
 });
+
