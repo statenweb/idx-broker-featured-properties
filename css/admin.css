@@ -31,7 +31,7 @@
     border-color: #999;
 }
 
-.ibfp-sortable .sortable-indicator
+.ibfp-sortable .sortable-indicator,
 #ibfp-sortable .sortable-indicator {
     float: right;
     line-height: 40px;

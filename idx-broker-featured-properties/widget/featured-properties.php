@@ -16,20 +16,10 @@ class Featured_Properties extends \WP_Widget {
 	 */
 	public function init() {
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
-	}
-
-	public function enqueue( $slug ) {
-
-		if ( $slug === 'widgets.php' ) {
-			wp_enqueue_script( 'ibfp-admin', dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/js/admin.js',
-				[ 'jquery-ui-sortable' ] );
-
-			wp_enqueue_style( 'ibfp-admin',
-				dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/css/admin.css' );
-		}
 
 	}
+
+
 
 	public function register_widget() {
 		register_widget( "\\IDX_Broker_Featured_Properties\\Widget\\Featured_Properties" );

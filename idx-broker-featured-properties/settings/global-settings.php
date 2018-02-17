@@ -18,19 +18,6 @@ class Global_Settings {
 	public function attach_hooks() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'settings_init' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
-	}
-
-	public function enqueue( $slug ) {
-
-		if ( $slug === 'settings_page_' . self::$menu_slug ) {
-			wp_enqueue_script( 'ibfp-admin', dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/js/admin.js',
-				[ 'jquery-ui-sortable' ] );
-
-			wp_enqueue_style( 'ibfp-admin',
-				dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/css/admin.css' );
-		}
-
 	}
 
 
@@ -101,8 +88,8 @@ class Global_Settings {
 		$selected_properties      = Featured::get();
 		$selected_properties_keys = array_keys( $selected_properties );
 		$property_keys            = array_keys( $properties );
-		$unselected_properties = array_diff( (array) $property_keys, (array) $selected_properties_keys );
-		$properties_to_display = false;
+		$unselected_properties    = array_diff( (array) $property_keys, (array) $selected_properties_keys );
+		$properties_to_display    = false;
 		?>
 		<div id="ibfp-sortable"><?php
 

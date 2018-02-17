@@ -21,7 +21,6 @@ class Posts {
 	public function attach_hooks() {
 		add_action( 'init', array( $this, 'set_post_types' ) );
 		add_action( 'add_meta_boxes', array( $this, 'meta_box' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'save_post', array( $this, 'save_post' ), 10, 3 );
 	}
 
@@ -49,21 +48,6 @@ class Posts {
 			}
 		}
 
-
-	}
-
-
-	public function enqueue( $slug ) {
-
-		if (
-		in_array( $slug, array( 'post.php', 'post-new.php' ) )
-		) {
-			wp_enqueue_script( 'ibfp-admin', dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/js/admin.js',
-				[ 'jquery-ui-sortable' ] );
-
-			wp_enqueue_style( 'ibfp-admin',
-				dirname( dirname( plugin_dir_url( __FILE__ ) ) ) . '/css/admin.css' );
-		}
 
 	}
 
