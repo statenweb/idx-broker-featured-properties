@@ -4,7 +4,7 @@ Donate link: https://statenweb.com/donate
 Tags: IDX Broker
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ add_filter( 'ibfp/post-types/displayd-meta-box-override', function ( $display_bo
 
 
 #### Release Notes
+
+- 1.0.4
+If no properties are selected in a widget, use all properties
 
 - 1.0.3
 Add isset check for array keys to fix warnings

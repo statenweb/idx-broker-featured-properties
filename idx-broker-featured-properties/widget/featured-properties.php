@@ -20,7 +20,6 @@ class Featured_Properties extends \WP_Widget {
 	}
 
 
-
 	public function register_widget() {
 		register_widget( "\\IDX_Broker_Featured_Properties\\Widget\\Featured_Properties" );
 	}
@@ -54,8 +53,12 @@ class Featured_Properties extends \WP_Widget {
 		$template_file      = apply_filters( 'ibfp_widget_template', $template_file );
 		$all_properties     = Request::get_properties();
 		$properties_to_pass = [];
+		$use_all            = false;
+		if ( count( $instance['featured_properties'] ) === 0 ) {
+			$use_all = true;
+		}
 		foreach ( $instance['featured_properties'] as $property_id ) {
-			if ( ! isset( $all_properties[ $property_id ] ) ) {
+			if ( ! $use_all && ! isset( $all_properties[ $property_id ] ) ) {
 				continue;
 			}
 			$properties_to_pass[] = $all_properties[ $property_id ];
