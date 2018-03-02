@@ -34,7 +34,7 @@ class Global_Settings {
 
 		add_settings_section(
 			'ibfp_plugin_page_section',
-			__( '', 'ibfp' ),
+			_x( '', 'settings page section title', 'ibfp' ),
 			array( $this, 'settings_section_callback' ),
 			'ibfp_plugin_page'
 		);
@@ -42,7 +42,8 @@ class Global_Settings {
 
 		add_settings_field(
 			'ibfp_api_key',
-			__( 'IDX Broker API Key', 'ibfp' ),
+			_x( apply_filters( 'ibfp/settings/subtitle/api_key', 'IDX Broker API Key' ), 'settings page subtitle',
+				'ibfp' ),
 			array( $this, 'api_key_render' ),
 			'ibfp_plugin_page',
 			'ibfp_plugin_page_section'
@@ -50,7 +51,9 @@ class Global_Settings {
 
 		add_settings_field(
 			self::$featured_properties_option,
-			__( 'IDX Broker Properties', 'ibfp' ),
+			_x( apply_filters( 'ibfp/settings/subtitle/properties', 'IDX Broker Properties' ), 'settings page subtitle',
+				'ibfp' ),
+
 			array( $this, 'featured_properties_render' ),
 			'ibfp_plugin_page',
 			'ibfp_plugin_page_section'
@@ -158,7 +161,9 @@ class Global_Settings {
 		<div class="wrap">
 			<form action='options.php' method='post'>
 
-				<h1>IDX Broker Featured Properties</h1>
+				<h1><?php echo esc_html_x( apply_filters( 'ibfp/settings/title', 'IDX Broker Featured Properties' ),
+						'settings page title',
+						'ibfp' ); ?></h1>
 
 				<?php
 

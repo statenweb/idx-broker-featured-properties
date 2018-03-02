@@ -13,12 +13,12 @@ class Featured {
 			$what['post_id'] = $what;
 		}
 
-		if ( $what['post_id'] ) {
+		if ( isset( $what['post_id'] ) ) {
 
 			$all_properties      = Request::get_properties();
 			$featured_properties = get_post_meta( $what['post_id'], Posts::$featured_properties_meta_key, true );
 
-		} elseif ( $what['option'] ) {
+		} elseif ( isset( $what['option'] ) ) {
 
 			$all_properties      = Request::get_properties();
 			$featured_properties = get_option( 'ibfp' . $what['option'] );
