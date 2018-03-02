@@ -52,16 +52,15 @@ class Featured_Properties extends \WP_Widget {
 		$template_file      = plugin_dir_path( dirname( dirname( __FILE__ ) ) ) . 'views/widget.php';
 		$template_file      = apply_filters( 'ibfp_widget_template', $template_file );
 		$all_properties     = Request::get_properties();
-		$properties_to_pass = [];
-		$use_all            = false;
-		if ( count( $instance['featured_properties'] ) === 0 ) {
-			$use_all = true;
-		}
-		foreach ( $instance['featured_properties'] as $property_id ) {
-			if ( ! $use_all && ! isset( $all_properties[ $property_id ] ) ) {
-				continue;
+		$properties_to_pass = ibfp_get_featured_properties();
+		if ( count( (array) $instance['featured_properties'] ) > 0 ) {
+			$properties_to_pass = [];
+			foreach ( $instance['featured_properties'] as $property_id ) {
+				if ( ! isset( $all_properties[ $property_id ] ) ) {
+					continue;
+				}
+				$properties_to_pass[] = $all_properties[ $property_id ];
 			}
-			$properties_to_pass[] = $all_properties[ $property_id ];
 		}
 
 		?>
@@ -116,6 +115,9 @@ class Featured_Properties extends \WP_Widget {
 
 		?>
 		<div class="widget-form">
+
+			<p>If you do not select any properties it will default to the settings from <strong>Settings</strong> > <strong>IDX Broker Featured Properties</strong></p>
+
 			<div class="ibfp-sortable">
 				<?php foreach ( $selected_properties_keys as $property_key ): ?>
 
