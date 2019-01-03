@@ -88,7 +88,7 @@ class Global_Settings {
 			return;
 		endif;
 		$properties               = Request::get_properties();
-		$selected_properties      = Featured::get();
+		$selected_properties      = Featured::get([], false);
 		$selected_properties_keys = array_keys( $selected_properties );
 		$property_keys            = array_keys( $properties );
 		$unselected_properties    = array_diff( (array) $property_keys, (array) $selected_properties_keys );

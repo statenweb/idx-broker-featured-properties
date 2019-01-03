@@ -7,29 +7,29 @@ use IDX_Broker_Featured_Properties\Settings\Posts;
 
 class Featured {
 
-	public static function get( $what = [] ) {
+	public static function get( $what = [], $return_all_if_empty = true ) {
 
 		if ( $what && ! is_array( $what ) ) {
 			$what['post_id'] = $what;
 		}
 
-		if ( isset( $what['post_id'] ) ) {
+		$all_properties = Request::get_properties();
 
-			$all_properties      = Request::get_properties();
+		if ( isset( $what['post_id'] ) ) {
 			$featured_properties = get_post_meta( $what['post_id'], Posts::$featured_properties_meta_key, true );
 
 		} elseif ( isset( $what['option'] ) ) {
-
-			$all_properties      = Request::get_properties();
 			$featured_properties = get_option( 'ibfp' . $what['option'] );
 
 		} else {
-			$all_properties      = Request::get_properties();
 			$featured_properties = get_option( Global_Settings::$featured_properties_option );
 
 		}
 		$properties_array = [];
 
+		if ( ! count( array_filter( (array) $featured_properties ) ) && $return_all_if_empty ) {
+			return $all_properties;
+		}
 		foreach ( (array) $featured_properties as $featured_property ) {
 
 			if ( isset( $all_properties[ $featured_property ] ) ) {
