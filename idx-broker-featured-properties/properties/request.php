@@ -23,6 +23,7 @@ class Request {
 			$featured_listings     = $idx_api->build_request( 'clients/featured' )->request();
 			$data                  = array_merge( (array) $supplemental_listings, (array) $featured_listings );
 			$data                  = self::rekey_data( $data );
+                        $data                  = apply_filters( 'ibfp/raw-data', $data );
 			set_transient( self::TRANSIENT_KEY, $data, self::TRANSIENT_LENGTH );
 		}
 

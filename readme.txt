@@ -4,7 +4,7 @@ Donate link: https://statenweb.com/donate
 Tags: IDX Broker
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ add_filter( 'ibfp/post-types/displayd-meta-box-override', function ( $display_bo
 
 
 #### Release Notes
+
+- 1.0.7
+Expose `ibfp/raw-data` to allow filtering of returned data from IDX Broker at the request level
 
 - 1.0.6
 If none are selected for homepage, return all
