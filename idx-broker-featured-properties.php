@@ -49,8 +49,8 @@ $posts->init();
 $widget = new Featured_Properties();
 $widget->init();
 
-function ibfp_get_featured_properties( $pass_through = false ) {
-	return Featured::get( $pass_through );
+function ibfp_get_featured_properties( $what = [], $return_all_if_empty = false ) {
+	return Featured::get( $what, $return_all_if_empty );
 }
 
 
