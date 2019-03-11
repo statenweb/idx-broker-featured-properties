@@ -7,7 +7,7 @@ use IDX_Broker_Featured_Properties\Settings\Posts;
 
 class Featured {
 
-	public static function get( $what = [], $return_all_if_empty = true ) {
+	public static function get( $what = [], $return_all_if_empty = false ) {
 
 		if ( $what && ! is_array( $what ) ) {
 			$what['post_id'] = $what;
